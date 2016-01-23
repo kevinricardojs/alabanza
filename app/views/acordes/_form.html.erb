@@ -1,0 +1,42 @@
+<%= form_for(@acorde) do |f| %>
+<% if @acorde.errors.any? %>
+<div id="error_explanation">
+    <h2><%= pluralize(@acorde.errors.count, "error") %> prohibited this acorde from being saved:</h2>
+
+    <ul>
+        <% @acorde.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+    </ul>
+</div>
+<% end %>
+
+<div class="field">
+    <%= f.label :cantante_id %><br>
+    <%= select_tag "acorde[cantante_id]", options_from_collection_for_select(Cantante.all, :id , :nombre) %>
+</div>
+<div class="field">
+    <%= f.label :album_id %><br>
+    <%= select_tag "acorde[album_id]", options_from_collection_for_select(Album.all, :id , :nombre) %>
+</div>
+<div class="field">
+    <%= f.label :nombre %><br>
+    <%= f.text_field :nombre %>
+</div>
+<div class="field">
+    <%= f.label :acorde %><br>
+    <%= f.text_area :acorde %>
+</div>
+<div class="field">
+    <%= f.label :descripcion %><br>
+    <%= f.text_field :descripcion %>
+</div>
+
+<div class="field">
+    <%= f.label :album_id %><br>
+    <%= select_tag "acorde[album_id]", options_from_collection_for_select(Album.all, :id , :nombre) %>
+</div>
+<div class="actions">
+    <%= f.submit %>
+</div>
+<% end %>

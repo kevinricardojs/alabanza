@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  root 'inicio#index'
+	resources :cantantes 
+	resources :albums 
+	resources :acordes
+	root 'inicio#index'
 
 
 end

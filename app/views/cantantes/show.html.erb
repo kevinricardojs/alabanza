@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @cantante.nombre %>
+</p>
+
+<% @albumes.each do |album|%>
+	<li><%= link_to album.nombre, album %></li>
+<%end%>
+<% @acordes.each do |acorde|%>
+	<li><%= link_to acorde.nombre, acorde %></li>
+<%end%>
+
+<%= link_to 'Edit', edit_cantante_path(@cantante) %> |
+<%= link_to 'Back', cantantes_path %> |
+<%= link_to 'Agregar Acorde', new_acorde_path %>

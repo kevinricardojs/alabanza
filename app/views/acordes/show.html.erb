@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Cantante:</strong>
+  <%= @acorde.cantante.nombre %>
+</p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @acorde.nombre %>
+</p>
+
+<p>
+  <strong>Acorde:</strong>
+  <%= @acorde.acorde %>
+</p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @acorde.descripcion %>
+</p>
+
+<p>
+  <strong>Album:</strong>
+  <%= @acorde.album.nombre %>
+</p>
+
+<%= link_to 'Edit', edit_acorde_path(@acorde) %> |
+<%= link_to 'Back', acordes_path %>

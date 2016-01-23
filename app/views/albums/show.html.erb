@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @album.nombre %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @album.year %>
+</p>
+
+<p>
+  <strong>Cantante:</strong>
+  <%= @album.cantante.nombre %>
+</p>
+
+<% @acordes.each do |acorde|%>
+	<li><%= link_to acorde.nombre, acorde %></li>
+<%end%>
+
+
+<%= link_to 'Edit', edit_album_path(@album) %> |
+<%= link_to 'Back', albums_path %>

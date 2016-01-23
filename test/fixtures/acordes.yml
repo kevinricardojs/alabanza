@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cantante_id: 
+  nombre: MyString
+  acorde: MyString
+  descripcion: MyString
+  album_id: 
+
+two:
+  cantante_id: 
+  nombre: MyString
+  acorde: MyString
+  descripcion: MyString
+  album_id: 
