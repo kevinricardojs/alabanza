@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
- root :to => 'welcome#index'
- get 'welcome/index'
+  get 'inicio/index'
+
+  root 'inicio#index'
 
 
 end
