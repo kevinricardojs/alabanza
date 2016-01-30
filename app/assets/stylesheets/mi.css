@@ -1,22 +1,76 @@
-body{
-	background: #2A3158;
+main{
+	background: #E0E0E0;
 }
-.acorde {
-	padding: 5px;
-	border-bottom: 1px solid #E0E0E0;
-}
+/*clases recicladas*/
 .block{
 	display: block;
 }
-.bg-indigo{
+.relative{
+	position: relative;
+}
+.margin-top{
+	margin-top: 1%;
+}
+.bg-teal{
 	background: #009688;
 	color: white;
 }
-.acorde-nombre{
-	
+.margin-bottom{
+	margin-bottom: 5px;
+}
+.bg-blue-gray{
+	background: #F5F5F5;
+}
+
+.album{
+	position: relative;
+}
+.album img{
+	max-width: 100%;
+}
+.album .album-info {
+	position: absolute;
+	background: rgba(0,0,0,0.1);
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	padding-left: 10px;
+}
+
+.album .album-info a{
+	position: absolute;
+	margin-bottom: 12px;
+	bottom:0;
+	color: white;
+	font-size: 13px;
+	text-decoration: none;
+}
+.acorde {
+	margin: 0 auto;
+	padding: 15px;
+	border-bottom: 1px solid #E0E0E0;
+}
+.acorde a {
+	font-weight: bold;
+	color: #37474f;
+	text-decoration: none;
 }
 .album-nombre{
 	padding-left: 2.5em;
-	font-size: 1em;
+	font-size: 0.8em;
 	color: #757575;
+}
+@media screen and (min-width: 840px){
+.card-cantante{
+	position: fixed;
+}
+.card-colecciones{
+	position: absolute;
+	right: 0;
+}
+.fixed{
+	position: fixed;
+}
+
 }

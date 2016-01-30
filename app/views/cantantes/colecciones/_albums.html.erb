@@ -1,9 +1,16 @@
 <div class="mdl-tabs__panel" id="albums">
-	<div class="mdl-cell mdl-cell--12-col">
+	<div class="mdl-grid mdl-grid--no-spacing">
 		<% @albumes.each do |album|%>
-		<div class="mdl-cell mdl-cel--8-col">
-			<%= link_to album.nombre, album %>
+		<% mio = 0%>
+		<% while mio < 25 %>
+			<% mio += 1%>
+		<div class="mdl-cell mdl-cell--4-col mdl-cell--12-col-phone album">
+			<img src="http://s10.postimg.org/tmmfqxfhl/Cover.jpg">
+			<span class="album-info">
+				<%= link_to album.nombre, album %>
+			</span>
 		</div>
+		<% end%>
 		<%end%>
 	</div>
 </div>

@@ -1,3 +1,5 @@
-document.addEventListener('page:change', function() {
-  componentHandler.upgradeDom();
+$(document).ready(function() {
+	document.addEventListener('page:change', function() {
+		componentHandler.upgradeDom();
+	});
 });
