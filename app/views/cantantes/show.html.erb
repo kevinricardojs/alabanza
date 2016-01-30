@@ -1,17 +1,29 @@
-<p id="notice"><%= notice %></p>
+<div class="mdl-cell mdl-cell--5-col mdl-cell--12-col-phone mdl-cell--12-col-tablet">
+	<div class="mdl-card mdl-cell mdl-cell--12-col">
+		<div class="mdl-card__title bg-indigo">
+			<h2 class="mdl-card__title-text"><%= @cantante.nombre %></h2>
+		</div>
+		<div class="mdl-card__media">
+			<img src="https://tiempodeavivamiento.files.wordpress.com/2014/05/danilo-montero-4-610x250.jpg" width="100%" height="auto" alt="<%= @cantante.nombre %>" >
+		</div>
+	  <div class="mdl-card__supporting-text">
+	  	Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+	  	Mauris sagittis pellentesque lacus eleifend lacinia...
+ 	 </div>
+	</div>
+	
+</div>
 
-<p>
-  <strong>Nombre:</strong>
-  <%= @cantante.nombre %>
-</p>
+<div class="mdl-cell mdl-cell--7-col mdl-cell--12-col-phone mdl-cell--12-col-tablet">
+	<div class="mdl-card mdl-cell mdl-cell--12-col">
+		<div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect ">
+			<div class="mdl-tabs__tab-bar">
+				<a href="#acordes" class="mdl-tabs__tab is-active">Acordes</a>
+				<a href="#albums" class="mdl-tabs__tab">Albumes</a>
+			</div>
+			<%= render 'cantantes/colecciones/acordes' %>
+			<%= render 'cantantes/colecciones/albums' %>
+		</div>
 
-<% @albumes.each do |album|%>
-	<li><%= link_to album.nombre, album %></li>
-<%end%>
-<% @acordes.each do |acorde|%>
-	<li><%= link_to acorde.nombre, acorde %></li>
-<%end%>
-
-<%= link_to 'Edit', edit_cantante_path(@cantante) %> |
-<%= link_to 'Back', cantantes_path %> |
-<%= link_to 'Agregar Acorde', new_acorde_path %>
+	</div>
+</div>

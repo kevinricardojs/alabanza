@@ -1,0 +1,9 @@
+<div class="mdl-tabs__panel" id="albums">
+	<div class="mdl-cell mdl-cell--12-col">
+		<% @albumes.each do |album|%>
+		<div class="mdl-cell mdl-cel--8-col">
+			<%= link_to album.nombre, album %>
+		</div>
+		<%end%>
+	</div>
+</div>

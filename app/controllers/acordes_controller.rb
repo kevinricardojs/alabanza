@@ -5,10 +5,6 @@ class AcordesController < ApplicationController
   def show
   end
 
-  def new
-    @acorde = Acorde.new
-  end
-
   def edit
   end
 
@@ -19,7 +15,7 @@ class AcordesController < ApplicationController
       if @acorde.save
         format.html { redirect_to @acorde, notice: 'Acorde was successfully created.' }
       else
-        format.html { render :new }
+        format.html { redirect_to new_acorde_cantantes_path }
       end
     end
   end
@@ -35,9 +31,10 @@ class AcordesController < ApplicationController
   end
 
   def destroy
+    cantante = @acorde.cantante
     @acorde.destroy
     respond_to do |format|
-      format.html { redirect_to acordes_url, notice: 'Acorde was successfully destroyed.' }
+      format.html { redirect_to cantante, notice: 'Acorde was successfully destroyed.' }
     end
   end
 

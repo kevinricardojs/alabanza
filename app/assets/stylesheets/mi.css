@@ -1,0 +1,22 @@
+body{
+	background: #2A3158;
+}
+.acorde {
+	padding: 5px;
+	border-bottom: 1px solid #E0E0E0;
+}
+.block{
+	display: block;
+}
+.bg-indigo{
+	background: #009688;
+	color: white;
+}
+.acorde-nombre{
+	
+}
+.album-nombre{
+	padding-left: 2.5em;
+	font-size: 1em;
+	color: #757575;
+}
