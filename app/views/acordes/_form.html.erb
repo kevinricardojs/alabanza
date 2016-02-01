@@ -1,4 +1,4 @@
-<%= form_for(@acorde) do |f| %>
+<%= form_for([@cantante, @acorde]) do |f| %>
 <% if @acorde.errors.any? %>
 <div id="error_explanation">
     <h2><%= pluralize(@acorde.errors.count, "error") %> prohibited this acorde from being saved:</h2>

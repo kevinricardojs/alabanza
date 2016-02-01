@@ -1,7 +1,10 @@
 class AcordesController < ApplicationController
   before_action :set_acorde, only: [:show, :edit, :update, :destroy]
+  before_action :set_cantante
 
-
+  def new
+    @acorde = Acorde.new
+  end
   def show
   end
 
@@ -9,11 +12,12 @@ class AcordesController < ApplicationController
   end
 
   def create
-    @acorde = Acorde.new(acorde_params)
+    @acorde = @cantante.acordes.new(acorde_params)
+    @acorde.cantante = @cantante
 
     respond_to do |format|
       if @acorde.save
-        format.html { redirect_to @acorde, notice: 'Acorde was successfully created.' }
+        format.html { redirect_to @cantante, notice: 'Acorde was successfully created.' }
       else
         format.html { redirect_to new_acorde_cantantes_path }
       end
@@ -23,7 +27,7 @@ class AcordesController < ApplicationController
   def update
     respond_to do |format|
       if @acorde.update(acorde_params)
-        format.html { redirect_to @acorde, notice: 'Acorde was successfully updated.' }
+        format.html { redirect_to @cantante, notice: 'Acorde was successfully updated.' }
       else
         format.html { render :edit }
       end
@@ -31,15 +35,17 @@ class AcordesController < ApplicationController
   end
 
   def destroy
-    cantante = @acorde.cantante
     @acorde.destroy
     respond_to do |format|
-      format.html { redirect_to cantante, notice: 'Acorde was successfully destroyed.' }
+      format.html { redirect_to @cantante, notice: 'Acorde was successfully destroyed.' }
     end
   end
 
   private
     # Use callbacks to share common setup or constraints between actions.
+     def set_cantante
+      @cantante = Cantante.find(params[:cantante_id])
+    end
     def set_acorde
       @acorde = Acorde.find(params[:id])
     end

@@ -1,4 +1,4 @@
-main{
+body{
 	background: #E0E0E0;
 }
 /*clases recicladas*/
@@ -18,8 +18,13 @@ main{
 .margin-bottom{
 	margin-bottom: 5px;
 }
-.bg-blue-gray{
+.bg-blanco{
 	background: #F5F5F5;
+}
+.opcion-right{
+	position: absolute;
+	right:0;
+	bottom: 12px;
 }
 
 .album{
@@ -36,9 +41,10 @@ main{
 	right: 0;
 	left: 0;
 	padding-left: 10px;
+	color:white;
 }
 
-.album .album-info a{
+.album .album-info span{
 	position: absolute;
 	margin-bottom: 12px;
 	bottom:0;
@@ -51,15 +57,22 @@ main{
 	padding: 15px;
 	border-bottom: 1px solid #E0E0E0;
 }
-.acorde a {
+.link-resource{
 	font-weight: bold;
 	color: #37474f;
 	text-decoration: none;
 }
-.album-nombre{
+.info-link{
 	padding-left: 2.5em;
 	font-size: 0.8em;
 	color: #757575;
+}
+.cantante{
+	border: 1px solid #E0E0E0;
+	padding:15px;
+}
+a{
+	text-decoration: none;
 }
 @media screen and (min-width: 840px){
 .card-cantante{

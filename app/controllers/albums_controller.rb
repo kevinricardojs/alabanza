@@ -1,6 +1,11 @@
 class AlbumsController < ApplicationController
   before_action :set_album, only: [:show, :edit, :update, :destroy]
+  before_action :set_cantante
 
+  def new
+    @album = Album.new
+  end
+  
   def show
     @acordes = @album.acordes
   end
@@ -9,11 +14,12 @@ class AlbumsController < ApplicationController
   end
 
   def create
-    @album = Album.new(album_params)
+    @album = @cantante.albums.new(album_params)
+    @album.cantante = @cantante
 
     respond_to do |format|
       if @album.save
-        format.html { redirect_to @album, notice: 'Album was successfully created.' }
+        format.html { redirect_to @cantante, notice: 'Album was successfully created.' }
         format.json { render :show, status: :created, location: @album }
       else
         format.html { render :new }
@@ -25,7 +31,7 @@ class AlbumsController < ApplicationController
   def update
     respond_to do |format|
       if @album.update(album_params)
-        format.html { redirect_to @album, notice: 'Album was successfully updated.' }
+        format.html { redirect_to @album.cantante, notice: 'Album was successfully updated.' }
         format.json { render :show, status: :ok, location: @album }
       else
         format.html { render :edit }
@@ -44,11 +50,14 @@ class AlbumsController < ApplicationController
   end
 
   private
-    def set_album
-      @album = Album.find(params[:id])
-    end
+  def set_cantante
+    @cantante = Cantante.find(params[:cantante_id])
+  end
+  def set_album
+    @album = Album.find(params[:id])
+  end
 
-    def album_params
-      params.require(:album).permit(:nombre, :year, :cantante_id)
-    end
+  def album_params
+    params.require(:album).permit(:nombre, :year, :cantante_id)
+  end
 end

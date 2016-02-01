@@ -16,9 +16,9 @@
 </p>
 
 <% @acordes.each do |acorde|%>
-	<li><%= link_to acorde.nombre, acorde %></li>
+	<li><%= link_to acorde.nombre, cantante_acorde_path(@cantante, acorde) %></li>
 <%end%>
 
 
-<%= link_to 'Edit', edit_album_path(@album) %> |
+<%= link_to 'Edit', edit_cantante_album_path(@cantante, @album) %> |
 <%= link_to 'Back', @album.cantante %>

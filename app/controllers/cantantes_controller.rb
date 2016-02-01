@@ -8,8 +8,6 @@ class CantantesController < ApplicationController
   def show
     @albumes = Cantante.find(@cantante).albums
     @acordes = Cantante.find(@cantante).acordes
-    @acorde = @cantante.acordes.new
-    @album = @cantante.albums.new
   end
 
   def new

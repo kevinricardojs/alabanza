@@ -1,11 +1,11 @@
-<div class="mdl-tabs__panel is-active" id="acordes">
-	<% Acorde.all.each do |acorde|%>
+<div class="mdl-tabs__panel is-active mdl-shadow--2dp" id="acordes">
+	<% @cantante.acordes.each do |acorde|%>
 	<% mio = 0%>
 	<% while mio < 100 %>
 	<% mio += 1%>
-	<div class="acorde bg-blue-gray">
-		<span class="acorde-nombre block"><%= link_to acorde.nombre, acorde %></span> 
-		<span class="album-nombre block"><%= acorde.album.nombre %></span>
+	<div class="acorde bg-blanco">
+		<span class="acorde-nombre block"><%= link_to acorde.nombre, cantante_acorde_path(@cantante,acorde) , class:"link-resource" %></span> 
+		<span class="info-link block"><%= acorde.album.nombre %></span>
 	</div>
 	<% end%>
 
