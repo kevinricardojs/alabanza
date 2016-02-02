@@ -1,0 +1,207 @@
+$borde : rgba(0,0,0,0.13);
+body{
+	background: #E0E0E0;
+}
+
+/*clases recicladas*/
+.text-center{
+	text-align: center;
+}
+.block{
+	display: block;
+}
+.relative{
+	position: relative;
+}
+.margin-top{
+	margin-top: 1%;
+}
+.bg-teal{
+	background: #009688;
+	color: white;
+}
+.margin-bottom{
+	margin-bottom: 5px;
+}
+.bg-gris{
+	background: #F5F5F5;
+}
+.bg-blanco{
+	background: #FFFFFF;
+}
+.opcion-right{
+	position: absolute;
+	right:0;
+	top: 15px;
+}
+.titulo-medio{
+	margin-left: 20px;
+	font-size: 30px;
+}
+.buton-back{
+	position: absolute;
+	top:10px;
+}
+
+.album{
+	position: relative;
+}
+.album img{
+	max-width: 100%;
+}
+.album .album-info {
+	position: absolute;
+	background: rgba(0,0,0,0.1);
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	padding-left: 10px;
+	color:white;
+}
+
+.album .album-info span{
+	position: absolute;
+	margin-bottom: 12px;
+	bottom:0;
+	color: white;
+	font-size: 13px;
+	text-decoration: none;
+}
+.acorde {
+	margin: 0 auto;
+	padding: 15px;
+	border-bottom: 1px solid $borde;
+}
+.link-resource{
+	font-weight: bold;
+	color: #37474f;
+	text-decoration: none;
+}
+.info-link{
+	padding-left: 2.5em;
+	font-size: 0.8em;
+	color: #757575;
+}
+.cantante{
+	border: 1px solid $borde;
+	padding:15px;
+}
+.titulo-cancion{
+	margin: 0 auto;
+	font-size: 2em;
+}
+.cantante-cancion, .album-cancion{
+	color:rgba(0,0,0,0.3);
+	font-size: 15px;
+	margin:0 auto;
+	padding: 0 auto;
+	display: inline-block;
+}
+a{
+	text-decoration: none;
+}
+.texto-acorde, .tono-acorde, .line-acorde{
+	a{
+		margin-left:auto;
+		margin-right:auto; 
+	}
+}
+@media screen and (min-width: 840px){
+	.card-cantante{
+		position: fixed;
+	}
+	.card-colecciones{
+		position: absolute;
+		right: 0;
+	}
+	.fixed{
+		position: fixed;
+	}
+}
+@media screen and (max-width:530px){
+	.back, .texto-acorde, .tono-acorde, .line-acorde{
+		padding-top:1em;
+		display:inline-block;
+		width: 24% !important;
+		a{
+			display: block;
+		}
+	}
+	.undo{
+			border-top:1px solid $borde;
+	}
+}
+.contenedor-acordes{
+	white-space: pre-wrap;
+}
+
+
+
+
+
+
+/*Select*/
+$color-black: "0,0,0";
+$select-background-color: transparent;
+$select-border-color: unquote("rgba(#{$color-black}, 0.12)") !default;
+$select-font-size: 16px;
+$select-color: unquote("rgba(#{$color-black}, 0.26)") !default;
+$select-padding: 4px;
+
+/* ==========  Select Field ========== */
+
+/* Style Select Field */
+select {
+	font-family: inherit;
+	background-color: transparent;
+	width: 100%;
+	padding: $select-padding 0;
+	font-size: $select-font-size;
+	color: $select-color;
+	border: none;
+	border-bottom: 1px solid $select-border-color;
+	option{
+		color: black
+	}
+}
+
+
+/* Remove focus */
+select:focus {
+	outline: none}
+
+	/* Hide label */
+	.mdl-selectfield label {display: none;}
+	/* Use custom arrow */
+	.mdl-selectfield select {appearance: none}
+	.mdl-selectfield {
+		font-family: 'Roboto','Helvetica','Arial',sans-serif;
+		position: relative;
+		&:after {
+			position: absolute;
+			top: 0.75em;
+			right: 0.5em;
+			/* Styling the down arrow */
+			width: 0;
+			height: 0;
+			padding: 0;
+			content: '';
+			border-left: .25em solid transparent;
+			border-right: .25em solid transparent;
+			border-top: .375em solid $select-border-color;
+			pointer-events: none;
+		}
+	}
+
+	/* ==========  Demo CSS ========== */
+	.demo {
+		width: 200px;
+		padding: 20px;
+		margin: 0 auto;
+		top: 50%;
+		margin-top: -2em;
+		position: absolute;
+		right: 0;
+		left: 0;
+	}

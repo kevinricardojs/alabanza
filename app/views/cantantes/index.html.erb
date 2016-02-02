@@ -1,8 +1,7 @@
 <div class="mdl-grid">
-    <div class="mdl-cell mdl-cell--1-col"></div>
-    <div class="mdl-cell mdl-cell--10-col mdl-shadow--2dp bg-blanco">
-        <div class="mdl-cell mdl-cell--12-col relative">
-            <h2>Todos los Cantantes</h2>
+        <div class="mdl-cell mdl-cell--1-col"></div>
+        <div class="mdl-cell mdl-cell--10-col relative bg-teal mdl-shadow--2dp">
+            <h1 class="titulo-medio">Acordes Cantantes Cristianos</h1>
             <div class="mdl-cell--hide-phone opcion-right">
                 <button id="opciones-cantante-index" class="mdl-button mdl-js-button mdl-button--icon">
                     <i class="fa fa-ellipsis-v"></i>
@@ -15,10 +14,12 @@
                 </ul>
             </div>
         </div>
+        <div class="mdl-cell mdl-cell--1-col"></div>
+    
         
-        <div class="mdl-grid">
+        <div class="mdl-grid mdl-grid--no-spacing">
             <% @cantantes.each do |cantante| %>
-            <div class="mdl-cell mdl-cell--6-col mdl-cell--12-col-tablet mdl-cell--12-col-phone cantante">
+            <div class="mdl-cell mdl-cell--6-col mdl-cell--12-col-tablet mdl-cell--12-col-phone cantante bg-blanco mdl-shadow--2dp">
                 <%= link_to cantante, class:"link-resource" do%>
                 <img src="https://image.jimcdn.com/app/cms/image/transf/dimension=200x10000:format=gif/path/s7a57f93bd15628ea/image/i55bb902ce9c40019/version/1279206752/image.gif" width="55px" height="auto" style="border-radius:100%;"/>
                 <span> <%= cantante.nombre %></span>
@@ -32,10 +33,4 @@
             </div>
             <% end %>
         </div>
-
-        <%= link_to 'New Cantante', new_cantante_path %>
-
-
-
-    </div>
 </div>

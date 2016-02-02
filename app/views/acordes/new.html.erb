@@ -1,1 +1,15 @@
-<%= render 'form'%>
+<div class="mdl-cell--1-col"></div>
+<div class="mdl-cell mdl-cell--10-col bg-blanco mdl-grid mdl-shadow--2dp relative">
+	<div class="buton-back">
+		<%= link_to @cantante, class:"mdl-button mdl-js-button mdl-button--accent"  do%>
+		<i class="fa fa-arrow-left"></i>
+		<%end%>
+	</div>
+	<div class="mdl-cell--1-col"></div>
+	<div class="mdl-cell mdl-cell--10-col">
+		<h1>Añadir nuevo Acorde</h1>
+
+		<%= render 'form' %>
+	</div>
+</div>
+

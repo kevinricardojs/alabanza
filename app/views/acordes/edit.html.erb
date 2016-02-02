@@ -1,6 +1,14 @@
-<h1>Editing acorde</h1>
+<div class="mdl-cell--1-col"></div>
+<div class="mdl-cell mdl-cell--10-col bg-blanco mdl-grid mdl-shadow--2dp relative">
+	<div class="buton-back">
+		<%= link_to cantante_acorde_path(@cantante, @acorde), class:"mdl-button mdl-js-button mdl-button--accent"  do%>
+		<i class="fa fa-arrow-left"></i>
+		<%end%>
+	</div>
+	<div class="mdl-cell--1-col"></div>
+	<div class="mdl-cell mdl-cell--10-col">
+		<h1>Editar Acorde</h1>
 
-<%= render 'form' %>
-
-<%= link_to 'Show', cantante_acorde_path(@cantante, @acorde) %> |
-<%= link_to 'Back', @acorde.cantante %>
+		<%= render 'form' %>
+	</div>
+</div>

@@ -1,6 +1,16 @@
-<h1>Editing cantante</h1>
+<div class="mdl-cell--1-col"></div>
+<div class="mdl-cell mdl-cell--10-col bg-blanco mdl-grid mdl-shadow--2dp relative">
+	<div class="buton-back">
+		<%= link_to @cantante, class:"mdl-button mdl-js-button mdl-button--accent"  do%>
+		<i class="fa fa-arrow-left"></i>
+		<%end%>
+	</div>
 
-<%= render 'form' %>
+	<div class="mdl-cell--1-col"></div>
+	<div class="mdl-cell mdl-cell--10-col">
+		<h1>Editar Cantante</h1>
 
-<%= link_to 'Show', @cantante %> |
-<%= link_to 'Back', cantantes_path %>
+		<%= render 'form' %>
+	</div>
+
+</div>

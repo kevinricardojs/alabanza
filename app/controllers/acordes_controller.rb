@@ -17,9 +17,9 @@ class AcordesController < ApplicationController
 
     respond_to do |format|
       if @acorde.save
-        format.html { redirect_to @cantante, notice: 'Acorde was successfully created.' }
+        format.html { redirect_to @cantante, notice: "El acorde '#{@acorde.nombre}' fue agregado con exito." }
       else
-        format.html { redirect_to new_acorde_cantantes_path }
+        format.html { redirect_to new_cantante_acorde_path(@cantante) }
       end
     end
   end
@@ -27,9 +27,9 @@ class AcordesController < ApplicationController
   def update
     respond_to do |format|
       if @acorde.update(acorde_params)
-        format.html { redirect_to @cantante, notice: 'Acorde was successfully updated.' }
+        format.html { redirect_to @cantante, notice: "#{@acorde.nombre} fue actualizado " }
       else
-        format.html { render :edit }
+        format.html { render edit_cantante_acorde_path(@cantante, @acorde) }
       end
     end
   end
@@ -37,7 +37,7 @@ class AcordesController < ApplicationController
   def destroy
     @acorde.destroy
     respond_to do |format|
-      format.html { redirect_to @cantante, notice: 'Acorde was successfully destroyed.' }
+      format.html { redirect_to @cantante, notice: "El Acorde fue Borrado" }
     end
   end
 

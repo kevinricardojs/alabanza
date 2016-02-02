@@ -11,29 +11,29 @@
 </div>
 <% end %>
 
-<div class="field mdl-textfield mdl-js-textfield">
-    <%= f.text_field :cantante_id %>
-    <%= f.label :cantante_id %>
-</div>
-<div class="field mdl-textfield mdl-js-textfield">
-    <%= f.text_field :album_id %>
+<br>
+<div class="field mdl-selectfield mdl-cell mdl-cell--12-col">
     <%= f.label :album_id %>
+    <%= collection_select(:acorde, :album_id, @cantante.albums, :id, :nombre, prompt:"Selecciona un Album", html:{class:"browser-default"})%>
 </div>
-<div class="field mdl-textfield mdl-js-textfield">
-    <%= f.text_field :nombre %>
-    <%= f.label :nombre %>
+<br>
+<div class="field mdl-textfield mdl-js-textfield mdl-cell mdl-cell--12-col">
+    <%= f.text_field :nombre,class:"mdl-textfield__input" %>
+    <%= f.label :nombre, "Titulo de la Canción", class:"mdl-textfield__label" %>
 </div>
-<div class="field mdl-textfield mdl-js-textfield">
-    <%= f.text_area :acorde %>
-    <%= f.label :acorde %>
+<br>
+<div class="field mdl-textfield mdl-js-textfield mdl-cell mdl-cell--12-col">
+    <%= f.text_area :acorde,class:"mdl-textfield__input", type:"text", rows:"25", id:"acorde_text_area" %>
+    <%= f.label :acorde, "Acordes de la Canción", class:"mdl-textfield__label", for:"acorde_text_area" %>
 </div>
-<div class="field mdl-textfield mdl-js-textfield">
-    <%= f.text_field :descripcion %>
-    <%= f.label :descripcion %>
+<br>
+<div class="field mdl-textfield mdl-js-textfield mdl-cell mdl-cell--12-col">
+    <%= f.text_field :descripcion,class:"mdl-textfield__input" %>
+    <%= f.label :descripcion, class:"mdl-textfield__label" %>
 </div>
 
 
 <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class:"mdl-button mdl-js-button mdl-button--raised mdl-button--colored", value:"Guardar" %>
 </div>
 <% end %>
