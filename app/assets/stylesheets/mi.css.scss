@@ -2,7 +2,15 @@ $borde : rgba(0,0,0,0.13);
 body{
 	background: #E0E0E0;
 }
-
+main{
+	width: 100%;
+}
+.border{
+	border: 1px solid $borde;
+}
+.block{
+	display:block;
+}
 /*clases recicladas*/
 .text-center{
 	text-align: center;
@@ -42,16 +50,52 @@ body{
 	position: absolute;
 	top:10px;
 }
+.cover{
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: center center;
+	height:250px;
+	.info{
+		position: absolute;
+		bottom: 0;
+		margin-left: 10px;
+		margin-bottom: 10px;
+		h1, h2{
+			color: white;
+			font-size: 18px;
+			margin: 0 auto;
+			padding: 0 auto;
+			line-height: 1.2;
+		}
+	}
+}
+.cover{
 
+}
+.song-album{
+	@extend .bg-blanco;
+	margin-top: 5px !important;
+	div{
+		
+		margin-bottom: 50px;
+		@extend .border;
+		a{
+			h3{
+				display: block;
+				font-size: 15px;
+			}
+		}
+	}
+}
 .album{
 	position: relative;
 }
 .album img{
 	max-width: 100%;
 }
-.album .album-info {
+.album-info {
 	position: absolute;
-	background: rgba(0,0,0,0.1);
+	background: rgba(0,0,0,0.2);
 	top: 0;
 	bottom: 0;
 	right: 0;
@@ -98,8 +142,11 @@ body{
 	padding: 0 auto;
 	display: inline-block;
 }
-a{
+main a{
 	text-decoration: none;
+	&:hover{
+		text-decoration: underline;
+	}
 }
 .texto-acorde, .tono-acorde, .line-acorde{
 	a{
@@ -129,9 +176,17 @@ a{
 		}
 	}
 	.undo{
-			border-top:1px solid $borde;
+		border-top:1px solid $borde;
+	}
+	
+}
+@media screen and (max-width: 720px){
+	.cover{
+		height: 175px;
 	}
 }
+
+
 .contenedor-acordes{
 	white-space: pre-wrap;
 }

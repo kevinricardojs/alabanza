@@ -52,6 +52,6 @@ class AcordesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def acorde_params
-      params.require(:acorde).permit(:cantante_id, :nombre, :acorde, :descripcion, :album_id)
+      params.require(:acorde).permit(:nombre, :acorde, :descripcion, :album_id)
     end
 end

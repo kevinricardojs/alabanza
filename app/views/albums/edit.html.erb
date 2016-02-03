@@ -1,6 +1,13 @@
-<h1>Editing album</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', cantante_album_path(@cantante, @album) %> |
-<%= link_to 'Back', @album.cantante %>
+<div class="mdl-cell--1-col"></div>
+<div class="mdl-cell mdl-cell--10-col bg-blanco mdl-grid mdl-shadow--2dp relative">
+	<div class="buton-back">
+		<%= link_to cantante_album_path(@cantante, @album), class:"mdl-button mdl-js-button mdl-button--accent"  do%>
+		<i class="fa fa-arrow-left"></i>
+		<%end%>
+	</div>
+	<div class="mdl-cell--1-col"></div>
+	<div class="mdl-cell mdl-cell--10-col">
+		<h1>Editar Album</h1>
+		<%= render 'form' %>
+	</div>
+</div>

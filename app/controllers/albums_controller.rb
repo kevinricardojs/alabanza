@@ -19,11 +19,9 @@ class AlbumsController < ApplicationController
 
     respond_to do |format|
       if @album.save
-        format.html { redirect_to @cantante, notice: 'Album was successfully created.' }
-        format.json { render :show, status: :created, location: @album }
+        format.html { redirect_to @cantante, notice: "El album '#{@album.nombre}' fue agregado con exito." }
       else
-        format.html { render :new }
-        format.json { render json: @album.errors, status: :unprocessable_entity }
+        format.html { render new_cantante_album_path(@cantante) }
       end
     end
   end
@@ -31,21 +29,17 @@ class AlbumsController < ApplicationController
   def update
     respond_to do |format|
       if @album.update(album_params)
-        format.html { redirect_to @album.cantante, notice: 'Album was successfully updated.' }
-        format.json { render :show, status: :ok, location: @album }
+        format.html { redirect_to @album.cantante, notice: "#{@album.nombre} fue actualizado " }
       else
-        format.html { render :edit }
-        format.json { render json: @album.errors, status: :unprocessable_entity }
+        format.html { render edit_cantante_album_path(@cantante, @album) }
       end
     end
   end
 
   def destroy
-    cantante = @album.cantante
     @album.destroy
     respond_to do |format|
-      format.html { redirect_to cantante, notice: 'Album was successfully destroyed.' }
-      format.json { head :no_content }
+      format.html { redirect_to @cantante, notice: "El Album fue borrado" }
     end
   end
 
@@ -58,6 +52,6 @@ class AlbumsController < ApplicationController
   end
 
   def album_params
-    params.require(:album).permit(:nombre, :year, :cantante_id)
+    params.require(:album).permit(:nombre, :year)
   end
 end
