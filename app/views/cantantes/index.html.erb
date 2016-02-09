@@ -1,36 +1,44 @@
-<div class="mdl-grid">
-        <div class="mdl-cell mdl-cell--1-col"></div>
-        <div class="mdl-cell mdl-cell--10-col relative bg-teal mdl-shadow--2dp">
-            <h1 class="titulo-medio">Acordes Cantantes Cristianos</h1>
-            <div class="mdl-cell--hide-phone opcion-right">
-                <button id="opciones-cantante-index" class="mdl-button mdl-js-button mdl-button--icon">
-                    <i class="fa fa-ellipsis-v"></i>
-                </button>
+<div class="mdl-grid mdl-cell  mdl-cell--1-offset-desktop mdl-cell--10-col">
+    <div class="mdl-cell mdl-cell--12-col relative bg-teal mdl-shadow--2dp">
+        <h1 class="titulo-medio">Acordes Cantantes Cristianos</h1>
+        <div class="mdl-cell--hide-phone opcion-right">
+            <button id="opciones-cantante-index" class="mdl-button mdl-js-button mdl-button--icon">
+                <i class="fa fa-ellipsis-v"></i>
+            </button>
 
-                <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="opciones-cantante-index">
-                    <%= link_to new_cantante_path do %>
-                        <li class="mdl-menu__item">Agregar Cantante</li>
-                    <%end%>
-                </ul>
-            </div>
-        </div>
-        <div class="mdl-cell mdl-cell--1-col"></div>
-    
-        
-        <div class="mdl-grid mdl-grid--no-spacing">
-            <% @cantantes.each do |cantante| %>
-            <div class="mdl-cell mdl-cell--6-col mdl-cell--12-col-tablet mdl-cell--12-col-phone cantante bg-blanco mdl-shadow--2dp">
-                <%= link_to cantante, class:"link-resource" do%>
-                <img src="https://image.jimcdn.com/app/cms/image/transf/dimension=200x10000:format=gif/path/s7a57f93bd15628ea/image/i55bb902ce9c40019/version/1279206752/image.gif" width="55px" height="auto" style="border-radius:100%;"/>
-                <span> <%= cantante.nombre %></span>
-                <span class="info-link">Acordes <%= cantante.acordes.count %></span>
-                <!--
-                <%= link_to 'Show', cantante %>
-                <%= link_to 'Edit', edit_cantante_path(cantante) %>
-                <%= link_to 'Destroy', cantante, method: :delete, data: { confirm: 'Are you sure?' } %>-->
-
+            <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="opciones-cantante-index">
+                <%= link_to new_cantante_path do %>
+                <li class="mdl-menu__item">Agregar Cantante</li>
                 <%end%>
-            </div>
-            <% end %>
+            </ul>
         </div>
+    </div>
+
+
+    <div class="mdl-grid mdl-grid--no-spacing mdl-cell mdl-cell--12-col">
+        <ul class="mdl-cell mdl-cell--12-col mdl-list bg-blanco mdl-shadow--2dp">
+           <% @cantantes.each do |cantante| %>
+
+           <li class="mdl-list__item mdl-list__item--two-line">
+               <span class="mdl-list__item-primary-content"> 
+                <img src="https://image.jimcdn.com/app/cms/image/transf/dimension=200x10000:format=gif/path/s7a57f93bd15628ea/image/i55bb902ce9c40019/version/1279206752/image.gif" width="55px" height="auto" style="border-radius:100%;" class="mdl-list__item-avatar" />
+                <%= link_to cantante, class:"link-resource"  do%>
+                <span><%= cantante.nombre %></span>
+                <%end%>
+                <span class="mdl-list__item-sub-title"></span>
+            </span>
+            <span class="mdl-list__item-secondary-content">
+
+               <span class="mdl-list__item-secondary-action"><%= cantante.acordes.count %> acordes</span>
+           </span>
+
+       </li>
+<!--
+<%= link_to 'Show', cantante %>
+<%= link_to 'Edit', edit_cantante_path(cantante) %>
+<%= link_to 'Destroy', cantante, method: :delete, data: { confirm: 'Are you sure?' } %>-->
+
+<% end %>
+</ul>
+</div>
 </div>

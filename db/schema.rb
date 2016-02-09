@@ -36,12 +36,6 @@ ActiveRecord::Schema.define(version: 20160123175024) do
 
   add_index "albums", ["cantante_id"], name: "index_albums_on_cantante_id"
 
-  create_table "artista", force: true do |t|
-    t.string   "nombre"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "cantantes", force: true do |t|
     t.string   "nombre"
     t.datetime "created_at"

@@ -2,7 +2,7 @@
 	<div class="mdl-grid bg-blanco">
 		<% @albumes.each do |album|%>
 		<% mio = 0%>
-		<% while mio < 25 %>
+		<% while mio < 2 %>
 		<% mio += 1%>
 		<div class="mdl-cell mdl-cell--4-col mdl-cell--12-col-phone album mdl-shadow--2dp">
 		<%= link_to cantante_album_path(@cantante, album) do %>

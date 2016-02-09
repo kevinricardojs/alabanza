@@ -1,4 +1,8 @@
 $borde : rgba(0,0,0,0.13);
+.white{
+	color: white !important;
+	text-decoration: none;
+}
 body{
 	background: #E0E0E0;
 }
@@ -145,7 +149,7 @@ main{
 main a{
 	text-decoration: none;
 	&:hover{
-		text-decoration: underline;
+		text-decoration: none;
 	}
 }
 .texto-acorde, .tono-acorde, .line-acorde{
