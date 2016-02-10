@@ -1,6 +1,6 @@
 <!---->
-<div class="mdl-grid mdl-grid--no-spacing mdl-cell mdl-cell--12-col mdl-cell--4-col-phone" >
-	<div class="mdl-cell mdl-cell--2-offset-desktop mdl-cell--8-col cover relative mdl-shadow--2dp" style="background-image: url('http://s10.postimg.org/tmmfqxfhl/Cover.jpg')">
+<section class="mdl-grid mdl-grid--no-spacing mdl-cell mdl-cell--12-col mdl-cell--4-col-phone" >
+	<article class="mdl-cell mdl-cell--2-offset-desktop mdl-cell--8-col cover relative mdl-shadow--2dp" style="background-image: url('http://s10.postimg.org/tmmfqxfhl/Cover.jpg')">
 		<div class="album-info">
 			<div class="info">
 				<h1><%= @album.nombre %></h1>
@@ -10,17 +10,15 @@
 				<%end%>
 			</div>
 		</div>
-	</div>
-	<div class="mdl-grid mdl-cell mdl-cell--2-offset-desktop mdl-cell--8-col song-album mdl-cell--4-col-phone mdl-shadow--2dp">
-		<ul class="demo-list-item mdl-list">
+	</article>
+	<article class="mdl-grid mdl-grid--no-spacing mdl-cell mdl-cell--2-offset-desktop mdl-cell--8-col song-album mdl-cell--4-col-phone mdl-shadow--2dp">
+		<ul class="mdl-cell mdl-cell--12-col mdl-list bg-blanco mdl-shadow--2dp">
 			<% @acordes.each do |acorde|%>
-			<%= link_to cantante_acorde_path(@cantante, acorde) do %>
+			<%= link_to cantante_acorde_path(@cantante, acorde), class:"link-resource" do %>
 			<li class="mdl-list__item">
 				<span class="mdl-list__item-primary-content">
 					<i class="fa fa-music mdl-list__item-icon"></i>
-					
 					<%= acorde.nombre%> acordes
-					
 				</span>
 			</li>
 			<%end%>
@@ -31,5 +29,5 @@
 			<%= link_to 'Edit', edit_cantante_album_path(@cantante, @album) %> |
 			<%= link_to 'Back', @album.cantante %>
 		</div>
-	</div>
-</div>
+	</article>
+</section>

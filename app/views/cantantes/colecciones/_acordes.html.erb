@@ -1,9 +1,6 @@
-<div class="mdl-tabs__panel is-active mdl-shadow--2dp" id="acordes">
+<article class="mdl-tabs__panel is-active mdl-shadow--2dp" id="acordes">
 	<ul class="mdl-list bg-blanco">
 		<% @cantante.acordes.each do |acorde|%>
-		<% mio = 0%>
-		<% while mio < 5 %>
-		<% mio += 1%>
 		<li class="mdl-list__item mdl-list__item--two-line">
 			<span class="mdl-list__item-primary-content">
 			<%= link_to cantante_acorde_path(@cantante,acorde), class:"link-resource" do %>
@@ -12,8 +9,6 @@
 				<span class="mdl-list__item-sub-title"><%= acorde.album.nombre %></span>
 			</span> 
 		</li>
-		<% end%>
-
 		<%end%>
 	</ul>
-</div>
+</article>

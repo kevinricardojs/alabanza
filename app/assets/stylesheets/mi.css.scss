@@ -1,4 +1,11 @@
 $borde : rgba(0,0,0,0.13);
+ul.mdl-list{
+	padding: 0;
+}
+.mdl-list__item{
+	border-bottom: 1px solid $borde;
+	padding: 10px;
+}
 .white{
 	color: white !important;
 	text-decoration: none;

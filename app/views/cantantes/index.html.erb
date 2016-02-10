@@ -1,5 +1,5 @@
-<div class="mdl-grid mdl-cell  mdl-cell--1-offset-desktop mdl-cell--10-col">
-    <div class="mdl-cell mdl-cell--12-col relative bg-teal mdl-shadow--2dp">
+<secrion class="mdl-grid mdl-cell  mdl-cell--1-offset-desktop mdl-cell--10-col">
+    <article class="mdl-cell mdl-cell--12-col relative bg-teal mdl-shadow--2dp">
         <h1 class="titulo-medio">Acordes Cantantes Cristianos</h1>
         <div class="mdl-cell--hide-phone opcion-right">
             <button id="opciones-cantante-index" class="mdl-button mdl-js-button mdl-button--icon">
@@ -12,27 +12,28 @@
                 <%end%>
             </ul>
         </div>
-    </div>
+    </article>
 
 
-    <div class="mdl-grid mdl-grid--no-spacing mdl-cell mdl-cell--12-col">
+    <article class="mdl-grid mdl-grid--no-spacing mdl-cell mdl-cell--12-col">
         <ul class="mdl-cell mdl-cell--12-col mdl-list bg-blanco mdl-shadow--2dp">
-           <% @cantantes.each do |cantante| %>
-
-           <li class="mdl-list__item mdl-list__item--two-line">
-               <span class="mdl-list__item-primary-content"> 
-                <img src="https://image.jimcdn.com/app/cms/image/transf/dimension=200x10000:format=gif/path/s7a57f93bd15628ea/image/i55bb902ce9c40019/version/1279206752/image.gif" width="55px" height="auto" style="border-radius:100%;" class="mdl-list__item-avatar" />
-                <%= link_to cantante, class:"link-resource"  do%>
-                <span><%= cantante.nombre %></span>
-                <%end%>
-                <span class="mdl-list__item-sub-title"></span>
+         <% @cantantes.each do |cantante| %>
+<%= link_to cantante, class:"link-resource"  do%>
+         <li class="mdl-list__item mdl-list__item--two-line">
+             <span class="mdl-list__item-primary-content "> 
+             <span class="mdl-list__item-avatar">
+                    <img src="https://image.jimcdn.com/app/cms/image/transf/dimension=200x10000:format=gif/path/s7a57f93bd15628ea/image/i55bb902ce9c40019/version/1279206752/image.gif" width="45px" height="auto" style="border-radius:100%;"/>   
+                    </span>
+                
+                    <span><%= cantante.nombre %></span>
+                
+                <span class="mdl-list__item-sub-title">
+                    <%= cantante.acordes.count %> acordes
+                </span>
+                
             </span>
-            <span class="mdl-list__item-secondary-content">
-
-               <span class="mdl-list__item-secondary-action"><%= cantante.acordes.count %> acordes</span>
-           </span>
-
-       </li>
+        </li>
+        <%end%>
 <!--
 <%= link_to 'Show', cantante %>
 <%= link_to 'Edit', edit_cantante_path(cantante) %>
@@ -40,5 +41,5 @@
 
 <% end %>
 </ul>
-</div>
-</div>
+</article>
+</secrion>
