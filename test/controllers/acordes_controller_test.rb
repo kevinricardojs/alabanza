@@ -18,7 +18,7 @@ class AcordesControllerTest < ActionController::TestCase
 
   test "should create acorde" do
     assert_difference('Acorde.count') do
-      post :create, acorde: { acorde: @acorde.acorde, album_id: @acorde.album_id, cantante_id: @acorde.cantante_id, descripcion: @acorde.descripcion, nombre: @acorde.nombre }
+      post :create, acorde: { acorde: @acorde.acorde, song_id: @acorde.song_id }
     end
 
     assert_redirected_to acorde_path(assigns(:acorde))
@@ -35,7 +35,7 @@ class AcordesControllerTest < ActionController::TestCase
   end
 
   test "should update acorde" do
-    patch :update, id: @acorde, acorde: { acorde: @acorde.acorde, album_id: @acorde.album_id, cantante_id: @acorde.cantante_id, descripcion: @acorde.descripcion, nombre: @acorde.nombre }
+    patch :update, id: @acorde, acorde: { acorde: @acorde.acorde, song_id: @acorde.song_id }
     assert_redirected_to acorde_path(assigns(:acorde))
   end
 

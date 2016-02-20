@@ -13,12 +13,12 @@
 	</article>
 	<article class="mdl-grid mdl-grid--no-spacing mdl-cell mdl-cell--2-offset-desktop mdl-cell--8-col song-album mdl-cell--4-col-phone mdl-shadow--2dp">
 		<ul class="mdl-cell mdl-cell--12-col mdl-list bg-blanco mdl-shadow--2dp">
-			<% @acordes.each do |acorde|%>
-			<%= link_to cantante_acorde_path(@cantante, acorde), class:"link-resource" do %>
+			<% @songs.each do |song|%>
+			<%= link_to cantante_song_path(@cantante, song), class:"link-resource" do %>
 			<li class="mdl-list__item">
 				<span class="mdl-list__item-primary-content">
 					<i class="fa fa-music mdl-list__item-icon"></i>
-					<%= acorde.nombre%> acordes
+					<%= song.nombre%> acordes
 				</span>
 			</li>
 			<%end%>

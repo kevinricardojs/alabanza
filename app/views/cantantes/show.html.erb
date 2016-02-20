@@ -12,7 +12,7 @@
 						<%= link_to edit_cantante_path(@cantante) do %>
 						<li class="mdl-menu__item">Editar</li>
 						<%end%>
-						<%= link_to new_cantante_acorde_path(@cantante) do %>
+						<%= link_to new_cantante_song_path(@cantante) do %>
 						<li class="mdl-menu__item">Agregar Acorde</li>
 						<%end%>
 						<%= link_to new_cantante_album_path(@cantante) do %>
@@ -33,7 +33,7 @@
 				<a href="#acordes" class="mdl-tabs__tab is-active">Acordes</a>
 				<a href="#albums" class="mdl-tabs__tab">Albumes</a>
 			</div>
-			<%= render 'cantantes/colecciones/acordes' %>
+			<%= render 'cantantes/colecciones/songs' %>
 			<%= render 'cantantes/colecciones/albums' %>
 		</div>
 

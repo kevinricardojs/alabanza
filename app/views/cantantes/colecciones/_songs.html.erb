@@ -1,12 +1,12 @@
 <article class="mdl-tabs__panel is-active mdl-shadow--2dp" id="acordes">
 	<ul class="mdl-list bg-blanco">
-		<% @cantante.acordes.each do |acorde|%>
+		<% @cantante.songs.each do |song|%>
 		<li class="mdl-list__item mdl-list__item--two-line">
 			<span class="mdl-list__item-primary-content">
-			<%= link_to cantante_acorde_path(@cantante,acorde), class:"link-resource" do %>
-					<span><%= acorde.nombre %></span>
+			<%= link_to cantante_song_path(@cantante,song), class:"link-resource" do %>
+					<span><%= song.nombre %></span>
 				<%end%>
-				<span class="mdl-list__item-sub-title"><%= acorde.album.nombre %></span>
+				<span class="mdl-list__item-sub-title"><%= song.album.nombre %></span>
 			</span> 
 		</li>
 		<%end%>

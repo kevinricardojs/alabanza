@@ -7,7 +7,7 @@ class AlbumsController < ApplicationController
   end
   
   def show
-    @acordes = @album.acordes
+    @songs = @album.songs
   end
 
   def edit

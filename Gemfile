@@ -7,6 +7,7 @@ gem 'rails', '4.1.4'
 # Fix the conflict with the system 'rake':
 gem 'rake', '~> 0.9.6'
 gem 'font-awesome-rails'
+gem 'material_icons'
 
 # Support for databases and environment.
 # Use 'sqlite3' for testing and development and mysql and postgresql
@@ -21,10 +22,11 @@ group :development, :test do
   gem 'sqlite3'
   gem 'minitest'
   gem 'thor'
+  gem 'spring'
 end
 
 group :production do
-  gem 'pg'
+ # gem 'pg'
 end
 
 ### / OpenShift changes
@@ -48,8 +50,6 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0'
 
-# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-gem 'spring'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
