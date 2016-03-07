@@ -177,7 +177,7 @@ main a{
 		position: fixed;
 	}
 }
-@media screen and (max-width:530px){
+@media screen and (max-width:700px){
 	.back, .texto-acorde, .tono-acorde, .line-acorde{
 		padding-top:1em;
 		display:inline-block;
@@ -271,3 +271,10 @@ select:focus {
 		right: 0;
 		left: 0;
 	}
+
+#current-acorde{
+border: 1px solid $borde;
+}
+#current-descripcion{
+	border: 1px solid red;
+}

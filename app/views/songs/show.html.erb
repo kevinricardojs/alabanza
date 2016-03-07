@@ -51,7 +51,7 @@
     </div>
     <div class="mdl-cell mdl-cell--2-col"></div>
     <div class="mdl-cell mdl-cell--2-col"></div>
-    <div class="mdl-cell mdl-cell--8-col bg-blanco mdl-grid mdl-shadow--2dp relative mdl-grid relative">
+    <div class="mdl-cell mdl-cell--8-col bg-blanco mdl-grid mdl-shadow--2dp relative mdl-grid--no-spacing relative">
         <div class="mdl-cell mdl-cell--1-col"></div>
         <div class="mdl-cell mdl-cell--10-col">
             <h1 class="titulo-cancion">Acordes <%= @song.nombre %></h1>   
@@ -74,19 +74,47 @@
         <div class="mdl-cell mdl-cell--12-col">
             <ul class="mdl-list mdl-cell mdl-cell--12-col">
                 <% @song.acordes.each do |acorde| %>
-                    <li class="mdl-list__item">
-                        <span class="mld-list__primary-content">
-                            <%= link_to @song.nombre + " Acorde", "#" , data:{ acorde_id: acorde.id} %>
-                        </span>
-                    </li>
+                <li class="mdl-list__item">
+                    <span class="mld-list__primary-content">
+                        <%= link_to @song.nombre + " Acorde", acorde_path(acorde) + ".json" ,class:"get-acorde" %>
+                    </span>
+                </li>
                 <% end %>
 
             </ul>
         </div>
-        <div class="mdl-cell mdl-cell--10-col">
-        <section>
-            <article class="mdl-cell mdl-cell--12-col contenedor-acordes" id="meter-acordes"></article>
-        </section>
+        <div class="mdl-cell--1-offset-desktop mdl-cell--10-col-desktop mdl-cell--4-col-phone">
+            <section>
+                <article class="mdl-cell mdl-cell--12-col contenedor-acordes" id="insert-acordes">
+                    <div id='current-acorde' >
+-- ESTROFA --
+D   G     A     D   G
+Renuévame, Señor Jesús
+Em7         A  -  Em  -  A
+Ya no quiero ser igual
+D   G     A     D   G
+Renuévame, Señor Jesús
+Em7      Asus4  -  Em  -  A
+Pon en mí tu corazón.
+
+-- CORO --
+
+D           A      Bm7       Asus4 - G
+Porque todo lo que hay dentro de mí
+Em7      A  -  Em  -  A
+Necesita ser cambiado señor
+D           A            Bm7         Asus4  -  G
+Porque todo lo que hay dentro de mi corazón
+A        (INTRO)
+Necesita más de ti.
+
+                    </div>
+                    <div id='current-descripcion' >
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur doloribus repellat accusantium adipisci consectetur, reprehenderit totam, fuga quibusdam enim quam odit. Aliquam cupiditate voluptates ea deserunt, reprehenderit dolorem rem exercitationem!
+                    </div>
+
+                </article>
+            </section>
         </div>
 
     </div>

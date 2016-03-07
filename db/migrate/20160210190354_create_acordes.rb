@@ -4,6 +4,7 @@ class CreateAcordes < ActiveRecord::Migration
       t.references :song, index: true
       t.text :acorde
       t.string :descripcion
+      #t.integer :visitas
 
       t.timestamps
     end
