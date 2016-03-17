@@ -8,45 +8,75 @@
             <%end%>
         </div>
         <div class=" text-center texto-acorde mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--1-col-phone ">
-            <%= link_to "#", class:"mdl-button mdl-js-button  mdl-button--colored prevenir" do %>
+            <%= link_to "#", class:"mdl-button mdl-js-button  mdl-button--colored prevenir", id:"manejar-texto" do %>
             <%= material_icon.format_size.md_36 %>
             <%end%>
-            <%= link_to "#", class:"mdl-button mdl-js-button mdl-button--icon mdl-button--accent prevenir" do %>
+            <div class="mdl-tooltip mdl-tooltip--large" for="manejar-texto">
+                Cambiar tamaño de letra
+            </div>
+            <%= link_to "#", class:"mdl-button mdl-js-button mdl-button--icon mdl-button--accent prevenir", id:"aumentar-texto" do %>
             <%= material_icon.add.md_24 %>
             <%end%>
-            <%= link_to "#", class:"mdl-button mdl-js-button mdl-button--icon mdl-button--accent prevenir" do %>
+            <div class="mdl-tooltip mdl-tooltip--large" for="aumentar-texto">
+                Aumentar tamaño de letra
+            </div>
+            <%= link_to "#", class:"mdl-button mdl-js-button mdl-button--icon mdl-button--accent prevenir", id:"disminuir-texto" do %>
             <%= material_icon.remove.md_24 %>
             <%end%>
+            <div class="mdl-tooltip mdl-tooltip--large" for="disminuir-texto">
+                Disminuir tamaño de letra
+            </div>
         </div>
 
         <div class=" text-center tono-acorde mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--1-col-phone ">
-            <%= link_to "#", class:"mdl-button mdl-js-button  mdl-button--colored prevenir" do %>
+            <%= link_to "#", class:"mdl-button mdl-js-button  mdl-button--colored prevenir", id:"manejar-tono" do %>
             <%= material_icon.music_note.md_36 %>
             <%end%>
-            <%= link_to "#", class:"mdl-button mdl-js-button mdl-button--icon mdl-button--accent prevenir" do %>
+            <div class="mdl-tooltip mdl-tooltip--large" for="manejar-tono">
+                Cambiar tonalidad de los acordes
+            </div>
+            <%= link_to "#", class:"mdl-button mdl-js-button mdl-button--icon mdl-button--accent prevenir", id:"aumentar-tono" do %>
             <%= material_icon.add.md_24 %>
             <%end%>
-            <%= link_to "#", class:"mdl-button mdl-js-button mdl-button--icon mdl-button--accent prevenir" do %>
+            <div class="mdl-tooltip mdl-tooltip--large" for="aumentar-tono">
+                Subir 1/2 Tono
+            </div>
+            <%= link_to "#", class:"mdl-button mdl-js-button mdl-button--icon mdl-button--accent prevenir", id:"disminuir-tono" do %>
             <%= material_icon.remove.md_24 %>
             <%end%>
+            <div class="mdl-tooltip mdl-tooltip--large" for="disminuir-tono">
+                Bajar 1/2 Tono
+            </div>
         </div>
         <div class=" text-center line-acorde mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--1-col-phone">
-            <%= link_to "#", class:"mdl-button mdl-js-button  mdl-button--colored prevenir" do %>
+            <%= link_to "#", class:"mdl-button mdl-js-button  mdl-button--colored prevenir", id:"manejar-espacio" do %>
             <%= material_icon.format_line_spacing.md_36 %>
             <%end%>
-            <%= link_to "#", class:"mdl-button mdl-js-button mdl-button--icon mdl-button--accent prevenir" do %>
-            <%= material_icon.arrow_drop_down.md_24 %>
-            <%end%>
-            <%= link_to "#", class:"mdl-button mdl-js-button mdl-button--icon mdl-button--accent prevenir" do %>
+            <div class="mdl-tooltip mdl-tooltip--large" for="manejar-espacio">
+                Cambiar espacio entre lineas
+            </div>
+            <%= link_to "#", class:"mdl-button mdl-js-button mdl-button--icon mdl-button--accent prevenir", id:"aumentar-espacio" do %>
             <%= material_icon.arrow_drop_up.md_24 %>
             <%end%>
+            <div class="mdl-tooltip mdl-tooltip--large" for="aumentar-espacio">
+                Aumentar espacio entre lineas
+            </div>
+            <%= link_to "#", class:"mdl-button mdl-js-button mdl-button--icon mdl-button--accent prevenir", id:"disminuir-espacio" do %>
+            <%= material_icon.arrow_drop_down.md_24 %>
+            <%end%>
+            <div class="mdl-tooltip mdl-tooltip--large" for="disminuir-espacio">
+                Disminuir espacio entre lineas
+            </div>
         </div>
 
 
         <div class="undo text-center mdl-cell mdl-cell--2-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone ">
-            <%= link_to "#", class:"mdl-button mdl-js-button  mdl-button--colored prevenir" do %>
+            <%= link_to "#", class:"mdl-button mdl-js-button  mdl-button--colored prevenir", id:"reboot" do %>
             <%= material_icon.undo.md_36 %>
             <%end%>
+            <div class="mdl-tooltip mdl-tooltip--large" for="reboot">
+                Reiniciar tono
+            </div>
         </div>
     </div>
     <div class="mdl-cell mdl-cell--2-col"></div>
@@ -54,7 +84,7 @@
     <div class="mdl-cell mdl-cell--8-col bg-blanco mdl-grid mdl-shadow--2dp relative mdl-grid--no-spacing relative">
         <div class="mdl-cell mdl-cell--1-col"></div>
         <div class="mdl-cell mdl-cell--10-col">
-            <h1 class="titulo-cancion">Acordes <%= @song.nombre %></h1>   
+            <h1 class="titulo-cancion">Acordes <%= @song.nombre %></h1>
             <h2 class="cantante-cancion"><i class="fa fa-user"></i> <%= link_to @song.cantante.nombre, @cantante %></h2>
             <h2 class="album-cancion"><i class="fa fa-music"></i> <%= link_to @song.album.nombre, cantante_album_path(@cantante, @song.album) %></h2>
             <div class="mdl-cell--hide-phone opcion-right">
@@ -86,32 +116,32 @@
         <div class="mdl-cell--1-offset-desktop mdl-cell--10-col-desktop mdl-cell--4-col-phone">
             <section>
                 <article class="mdl-cell mdl-cell--12-col contenedor-acordes" id="insert-acordes">
-                    <div id='current-acorde' >
--- ESTROFA --
-D   G     A     D   G
-Renuévame, Señor Jesús
-Em7         A  -  Em  -  A
-Ya no quiero ser igual
-D   G     A     D   G
-Renuévame, Señor Jesús
-Em7      Asus4  -  Em  -  A
-Pon en mí tu corazón.
+<div id='current-acorde' >
+    -- ESTROFA --
+    D   G     A     D    G
+    Renuévame, Señor Jesús
+    Em7         A  -  Em  -  A
+    Ya no quiero ser igual
+    D   G     A     D   G
+    Renuévame, Señor Jesús
+    Em7      Asus4  -  Em  -  A
+    Pon en mí tu corazón.
 
--- CORO --
+    -- CORO --
 
-D           A      Bm7       Asus4 - G
-Porque todo lo que hay dentro de mí
-Em7      A  -  Em  -  A
-Necesita ser cambiado señor
-D           A            Bm7         Asus4  -  G
-Porque todo lo que hay dentro de mi corazón
-A        (INTRO)
-Necesita más de ti.
+    D           A      Bm7       Asus4 - G
+    Porque todo lo que hay dentro de mí
+    Em7      A  -  Em  -  A
+    Necesita ser cambiado señor
+    D           A            Bm7         Asus4  -  G
+    Porque todo lo que hay dentro de mi corazón
+    A        (INTRO)
+    Necesita más de ti.
 
-                    </div>
-                    <div id='current-descripcion' >
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur doloribus repellat accusantium adipisci consectetur, reprehenderit totam, fuga quibusdam enim quam odit. Aliquam cupiditate voluptates ea deserunt, reprehenderit dolorem rem exercitationem!
-                    </div>
+</div>
+<div id='current-descripcion' >
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur doloribus repellat accusantium adipisci consectetur, reprehenderit totam, fuga quibusdam enim quam odit. Aliquam cupiditate voluptates ea deserunt, reprehenderit dolorem rem exercitationem!
+</div>
 
                 </article>
             </section>
