@@ -6,6 +6,7 @@ class SongsController < ApplicationController
     @song = Song.new
   end
   def show
+    @title =  "Acordes " + @song.nombre
   end
 
   def edit
@@ -43,7 +44,7 @@ class SongsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
-     def set_cantante
+    def set_cantante
       @cantante = Cantante.find(params[:cantante_id])
     end
     def set_song

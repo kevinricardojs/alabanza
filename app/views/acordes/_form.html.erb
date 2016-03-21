@@ -1,0 +1,14 @@
+<%= form_for([@cantante, @song, @acorde])  do |f| %>
+<div class="field mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell--12-col">
+  <%= f.text_area :acorde, class:"mdl-textfield__input", rows:10, autofocus:true %>
+  <%= f.label :acorde, "Escribe o pega tus nuevos acordes",  class:"mdl-textfield__label" %>
+</div>
+<br>
+<div class="field mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell--12-col">
+  <%= f.text_field :descripcion, class:"mdl-textfield__input" %>
+  <%= f.label :descripcion, "Escribe una descripción corta de como tocar estas notas", class:"mdl-textfield__label" %>
+</div>
+<div class="actions">
+  <%= f.submit %>
+</div>
+<%end%>

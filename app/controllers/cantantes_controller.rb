@@ -6,6 +6,7 @@ class CantantesController < ApplicationController
   end
 
   def show
+    @title = "Acordes " + @cantante.nombre
     @albumes = Cantante.find(@cantante).albums
     @songs = Cantante.find(@cantante).songs
   end

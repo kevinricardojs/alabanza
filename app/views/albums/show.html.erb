@@ -9,6 +9,20 @@
 				<h2><%= @album.cantante.nombre %></h2>
 				<%end%>
 			</div>
+			<div class="mdl-cell--hide-phone opcion-right">
+				<button id="opciones-cantante-index" class="mdl-button mdl-js-button mdl-button--icon">
+					<i class="material-icons">more_vert</i>
+				</button>
+
+				<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="opciones-cantante-index">
+					<%= link_to "#" do %>
+					<li class="mdl-menu__item">Editar Album</li>
+					<%end%>
+					<%= link_to "#" do %>
+					<li class="mdl-menu__item">Ordenar Canciones</li>
+					<%end%>
+				</ul>
+			</div>
 		</div>
 	</article>
 	<article class="mdl-grid mdl-grid--no-spacing mdl-cell mdl-cell--2-offset-desktop mdl-cell--8-col song-album mdl-cell--4-col-phone mdl-shadow--2dp">

@@ -1,5 +1,4 @@
 $borde : rgba(0,0,0,0.13);
-
 ul.mdl-list{
 	padding: 0;
 }
@@ -198,9 +197,19 @@ main a{
 	}
 }
 
-
-.contenedor-acordes{
+.coleccion-acciones{
+	border-bottom: solid 1px $borde;
+}
+.current-acorde{
 	white-space: pre-wrap;
+	line-height: 20px;
+	padding: 10px 0px;
+	margin-top: 10px;
+}
+.current-descripcion{
+	margin-top: 10px !important;
+	padding: 10px 0px;
+	border-top: 1px solid $borde;
 }
 
 

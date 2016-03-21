@@ -17,15 +17,9 @@
             <%= link_to "#", class:"mdl-button mdl-js-button mdl-button--icon mdl-button--accent prevenir", id:"aumentar-texto" do %>
             <%= material_icon.add.md_24 %>
             <%end%>
-            <div class="mdl-tooltip mdl-tooltip--large" for="aumentar-texto">
-                Aumentar tamaño de letra
-            </div>
             <%= link_to "#", class:"mdl-button mdl-js-button mdl-button--icon mdl-button--accent prevenir", id:"disminuir-texto" do %>
             <%= material_icon.remove.md_24 %>
             <%end%>
-            <div class="mdl-tooltip mdl-tooltip--large" for="disminuir-texto">
-                Disminuir tamaño de letra
-            </div>
         </div>
 
         <div class=" text-center tono-acorde mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--1-col-phone ">
@@ -38,15 +32,9 @@
             <%= link_to "#", class:"mdl-button mdl-js-button mdl-button--icon mdl-button--accent prevenir", id:"aumentar-tono" do %>
             <%= material_icon.add.md_24 %>
             <%end%>
-            <div class="mdl-tooltip mdl-tooltip--large" for="aumentar-tono">
-                Subir 1/2 Tono
-            </div>
             <%= link_to "#", class:"mdl-button mdl-js-button mdl-button--icon mdl-button--accent prevenir", id:"disminuir-tono" do %>
             <%= material_icon.remove.md_24 %>
             <%end%>
-            <div class="mdl-tooltip mdl-tooltip--large" for="disminuir-tono">
-                Bajar 1/2 Tono
-            </div>
         </div>
         <div class=" text-center line-acorde mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--1-col-phone">
             <%= link_to "#", class:"mdl-button mdl-js-button  mdl-button--colored prevenir", id:"manejar-espacio" do %>
@@ -58,15 +46,9 @@
             <%= link_to "#", class:"mdl-button mdl-js-button mdl-button--icon mdl-button--accent prevenir", id:"aumentar-espacio" do %>
             <%= material_icon.arrow_drop_up.md_24 %>
             <%end%>
-            <div class="mdl-tooltip mdl-tooltip--large" for="aumentar-espacio">
-                Aumentar espacio entre lineas
-            </div>
             <%= link_to "#", class:"mdl-button mdl-js-button mdl-button--icon mdl-button--accent prevenir", id:"disminuir-espacio" do %>
             <%= material_icon.arrow_drop_down.md_24 %>
             <%end%>
-            <div class="mdl-tooltip mdl-tooltip--large" for="disminuir-espacio">
-                Disminuir espacio entre lineas
-            </div>
         </div>
 
 
@@ -96,60 +78,59 @@
                     <%= link_to edit_cantante_song_path(@cantante,@song) do %>
                     <li class="mdl-menu__item">Editar</li>
                     <%end%>
+                    <%= link_to new_cantante_song_acorde_path(@cantante, @song) do %>
+                    <li class="mdl-menu__item">Agregar nueva versión de acordes</li>
+                    <%end%>
                 </ul>
             </div>
         </div>
         <div class="mdl-cell mdl-cell--1-col"></div>
         <div class="mdl-cell mdl-cell--1-col"></div>
-        <div class="mdl-cell mdl-cell--12-col">
-            <ul class="mdl-list mdl-cell mdl-cell--12-col">
-                <% @song.acordes.each do |acorde| %>
-                <li class="mdl-list__item">
-                    <span class="mld-list__primary-content">
-                        <%= link_to @song.nombre + " Acorde", acorde_path(acorde) + ".json" ,class:"get-acorde" %>
-                    </span>
-                </li>
-                <% end %>
-
-            </ul>
-        </div>
-        <div class="mdl-cell--1-offset-desktop mdl-cell--10-col-desktop mdl-cell--4-col-phone">
+        <div class=" mdl-cell--12-col">
             <section>
-                <article class="mdl-cell mdl-cell--12-col contenedor-acordes" id="insert-acordes">
-<div id='current-acorde' >
-    -- ESTROFA --
-    D   G     A     D    G
-    Renuévame, Señor Jesús
-    Em7         A  -  Em  -  A
-    Ya no quiero ser igual
-    D   G     A     D   G
-    Renuévame, Señor Jesús
-    Em7      Asus4  -  Em  -  A
-    Pon en mí tu corazón.
+                <div class="mdl-tabs mdl-js-tabs mdl-js-ripple-effect">
+                  <div class="mdl-tabs__tab-bar">
+                      <% @song.acordes.each do |acorde| %>
 
-    -- CORO --
+                      <%= link_to "##{acorde.id}", "#version_" + "#{acorde.id}" ,class:"get-acorde mdl-tabs__tab ", data:{direction:cantante_song_acorde_path(@cantante, @song, acorde) + ".json", version:"version_" + acorde.id.to_s } %>
+                      <% end %>
+                  </div>
 
-    D           A      Bm7       Asus4 - G
-    Porque todo lo que hay dentro de mí
-    Em7      A  -  Em  -  A
-    Necesita ser cambiado señor
-    D           A            Bm7         Asus4  -  G
-    Porque todo lo que hay dentro de mi corazón
-    A        (INTRO)
-    Necesita más de ti.
+                  <% @song.acordes.each do |acorde| %>
+                  <article class="mdl-tabs__panel contenedor-acordes mdl-grid mdl-grid--no-spacing" id="version_<%= acorde.id %>">
+                      <div class="mdl-cell mdl-cell--1-offset-desktop mdl-cell--10-col-desktop mdl-cell--8-col-tablet mdl-cell--4-col-phone coleccion-acciones mdl-grid mdl-grid--no-spacing">
+                          <%= link_to "#", class:"mdl-button mdl-js-button mdl-button--primary mdl-js-ripple-effect mdl-cell mdl-cell--1-col-phone mdl-cell--2-col-desktop mdl-cell--hide-phone mdl-cell--hide-tablet" do %>
+                          <i class="material-icons">print</i>
+                          <%end%>
+                          <%= link_to "#", class:"mdl-button mdl-js-button mdl-button--primary mdl-js-ripple-effect mdl-cell mdl-cell--1-col-phone mdl-cell--2-col-desktop" do %>
+                          <i class="material-icons">thumb_down</i>
+                          <%end%>
+                          <%= link_to "#", class:"mdl-button mdl-js-button mdl-button--primary mdl-js-ripple-effect mdl-cell mdl-cell--1-col-phone mdl-cell--2-col-desktop" do %>
+                          <i class="material-icons">thumb_up</i>
+                          <%end%>
+                          <%= link_to "#", class:"mdl-button mdl-js-button mdl-button--primary mdl-js-ripple-effect mdl-cell mdl-cell--1-col-phone mdl-cell--2-col-desktop" do %>
+                          <i class="material-icons">favorite</i>
+                          <%end%>
+                          <%= link_to edit_cantante_song_acorde_path(@cantante, @song, acorde), class:"mdl-button mdl-js-button mdl-button--primary mdl-js-ripple-effect mdl-cell mdl-cell--1-col-phone mdl-cell--2-col-desktop mdl-cell--hide-phone mdl-cell--hide-tablet" do %>
+                          <i class="material-icons">edit</i>
+                          <%end%>
+                          <%= link_to "#", class:"mdl-button mdl-js-button mdl-button--primary mdl-js-ripple-effect mdl-cell mdl-cell--1-col-phone mdl-cell--2-col-desktop" do %>
+                          <i class="material-icons">wc</i>
+                          <%end%>
+                      </div>
+
+                      <div class="mdl-cell mdl-cell--1-offset-desktop mdl-cell--1-offset-tablet mdl-cell--10-col mdl-cell--8-col-tablet mdl-cell--4-col-phone current-acorde"></div>
+                      <div class="mdl-cell mdl-cell--1-offset-desktop mdl-cell--1-offset-tablet mdl-cell--10-col mdl-cell--8-col-tablet mdl-cell--4-col-phone current-descripcion"></div>
+                  </article>
+                  <% end %>
+              </div>
+          </section>
+      </div>
+
+  </div>
 
 </div>
-<div id='current-descripcion' >
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur doloribus repellat accusantium adipisci consectetur, reprehenderit totam, fuga quibusdam enim quam odit. Aliquam cupiditate voluptates ea deserunt, reprehenderit dolorem rem exercitationem!
-</div>
 
-                </article>
-            </section>
-        </div>
-
-    </div>
-
-</div>
 
 
 </div>

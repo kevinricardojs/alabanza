@@ -5,8 +5,9 @@ class AlbumsController < ApplicationController
   def new
     @album = Album.new
   end
-  
+
   def show
+    @title = "Acordes Disco " + @album.nombre
     @songs = @album.songs
   end
 
