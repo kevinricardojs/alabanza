@@ -30,7 +30,7 @@ class AlbumsController < ApplicationController
   def update
     respond_to do |format|
       if @album.update(album_params)
-        format.html { redirect_to @album.cantante, notice: "#{@album.nombre} fue actualizado " }
+        format.html { redirect_to cantante_album_path(@cantante, @album), notice: "#{@album.nombre} fue actualizado " }
       else
         format.html { render edit_cantante_album_path(@cantante, @album) }
       end
@@ -46,10 +46,10 @@ class AlbumsController < ApplicationController
 
   private
   def set_cantante
-    @cantante = Cantante.find(params[:cantante_id])
+    @cantante = Cantante.friendly.find(params[:cantante_id])
   end
   def set_album
-    @album = Album.find(params[:id])
+    @album = Album.friendly.find(params[:id])
   end
 
   def album_params

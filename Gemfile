@@ -8,6 +8,7 @@ gem 'rails', '4.1.4'
 gem 'rake', '~> 0.9.6'
 gem 'font-awesome-rails'
 gem 'material_icons'
+gem 'friendly_id', '~> 5.1'
 
 # Support for databases and environment.
 # Use 'sqlite3' for testing and development and mysql and postgresql

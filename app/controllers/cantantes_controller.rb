@@ -49,7 +49,7 @@ class CantantesController < ApplicationController
 
   private
     def set_cantante
-      @cantante = Cantante.find(params[:id])
+      @cantante = Cantante.friendly.find(params[:id])
     end
 
     def cantante_params

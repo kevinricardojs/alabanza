@@ -31,7 +31,7 @@ class AcordesController < ApplicationController
       if @acorde.save
         format.html { redirect_to cantante_song_path(@cantante, @song), notice: 'Tu versión fue creada.' }
       else
-        format.html { redirect_to cantante_song_path(@cantante, @song), notice: 'Algo ha fallado.' }
+        format.html { redirect_to new_cantante_song_acorde_path(@cantante, @song), notice: 'Algo ha fallado!' }
       end
     end
   end
@@ -60,10 +60,10 @@ class AcordesController < ApplicationController
 
   private
     def set_cantante
-      @cantante = Cantante.find(params[:cantante_id])
+      @cantante = Cantante.friendly.find(params[:cantante_id])
     end
     def set_song
-      @song = Song.find(params[:song_id])
+      @song = Song.friendly.find(params[:song_id])
     end
     # Use callbacks to share common setup or constraints between actions.
     def set_acorde

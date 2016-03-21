@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160210190354) do
+ActiveRecord::Schema.define(version: 20160321210349) do
 
   create_table "acordes", force: true do |t|
     t.integer  "song_id"
@@ -29,15 +29,20 @@ ActiveRecord::Schema.define(version: 20160210190354) do
     t.integer  "cantante_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "slug"
   end
 
   add_index "albums", ["cantante_id"], name: "index_albums_on_cantante_id"
+  add_index "albums", ["slug"], name: "index_albums_on_slug"
 
   create_table "cantantes", force: true do |t|
     t.string   "nombre"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "slug"
   end
+
+  add_index "cantantes", ["slug"], name: "index_cantantes_on_slug"
 
   create_table "songs", force: true do |t|
     t.integer  "cantante_id"
@@ -45,9 +50,11 @@ ActiveRecord::Schema.define(version: 20160210190354) do
     t.string   "nombre"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "slug"
   end
 
   add_index "songs", ["album_id"], name: "index_songs_on_album_id"
   add_index "songs", ["cantante_id"], name: "index_songs_on_cantante_id"
+  add_index "songs", ["slug"], name: "index_songs_on_slug"
 
 end
