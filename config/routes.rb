@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
 
 
-	resources :cantantes do
-		resources :albums, except: [ :index ]
-		resources :songs, except: [ :index ] do
+	resources :cantantes, path: "cantante" do
+		resources :albums, path: "album", except: [ :index ]
+		resources :songs, path: "cancion", except: [ :index ] do
       resources :acordes
     end
 	end
