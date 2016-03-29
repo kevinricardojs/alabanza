@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160321210349) do
+ActiveRecord::Schema.define(version: 20160329023324) do
 
   create_table "acordes", force: true do |t|
     t.integer  "song_id"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20160321210349) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "slug"
+    t.string   "url_cover"
   end
 
   add_index "albums", ["cantante_id"], name: "index_albums_on_cantante_id"
@@ -40,6 +41,7 @@ ActiveRecord::Schema.define(version: 20160321210349) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "slug"
+    t.string   "url_foto"
   end
 
   add_index "cantantes", ["slug"], name: "index_cantantes_on_slug"

@@ -53,6 +53,6 @@ class CantantesController < ApplicationController
     end
 
     def cantante_params
-      params.require(:cantante).permit(:nombre)
+      params.require(:cantante).permit(:nombre, :url_foto)
     end
 end

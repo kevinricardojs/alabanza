@@ -11,15 +11,17 @@
 </div>
 <% end %>
 
-<div class="field mdl-textfield mdl-js-textfield">
-<%= f.text_field :nombre, class:"mdl-textfield__input" %>
+<div class="field mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--6-col">
+  <%= f.text_field :nombre, class:"mdl-textfield__input" %>
   <%= f.label :nombre, class:"mdl-textfield__label" %>
 </div>
-<div class="field mdl-textfield mdl-js-textfield">
-  <%= f.text_field :year, class:"mdl-textfield__input" %>
-  <%= f.label :year, class:"mdl-textfield__label" %>
-</div>  
+<div class="field mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--3-col">  <%= f.text_field :year, class:"mdl-textfield__input" %>
+  <%= f.label :year, "Año", class:"mdl-textfield__label" %>
+</div>
+<div class="field mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--12-col">  <%= f.url_field :url_cover, class:"mdl-textfield__input" %>
+  <%= f.label :url_cover, "Url de Tapa", class:"mdl-textfield__label" %>
+</div>
 <div class="actions">
-   <%= f.submit class:"mdl-button mdl-js-button mdl-button--raised mdl-button--colored", value:"Guardar" %>
+ <%= f.submit class:"mdl-button mdl-js-button mdl-button--raised mdl-button--colored", value:"Guardar" %>
 </div>
 <% end %>

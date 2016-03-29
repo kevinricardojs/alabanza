@@ -11,10 +11,15 @@
 </div>
 <% end %>
 
-<div class="field mdl-textfield mdl-js-textfield">
+<div class="field mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--8-col">
     <%= f.text_field :nombre, pattern:"[A-Z,a-z, ]*", class:"mdl-textfield__input"  %>
     <%= f.label :nombre, class:"mdl-textfield__label" %>
-    <span class="mdl-textfield__error" >Sole se aceptan letras y espacios...</span>
+    <span class="mdl-textfield__error" >Solo se aceptan letras y espacios...</span>
+</div>
+<div class="field mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--12-col">
+    <%= f.url_field :url_foto, class:"mdl-textfield__input"  %>
+    <%= f.label :url_foto, "Url fotografia", class:"mdl-textfield__label" %>
+    <span class="mdl-textfield__error" >Solo se aceptan letras y espacios...</span>
 </div>
 <div class="actions">
     <%= f.submit class:"mdl-button mdl-js-button mdl-button--raised mdl-button--colored", value:"Guardar" %>

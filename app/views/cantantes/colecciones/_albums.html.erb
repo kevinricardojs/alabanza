@@ -3,7 +3,7 @@
 		<% @albumes.each do |album|%>
 		<div class="mdl-cell mdl-cell--4-col mdl-cell--12-col-phone album mdl-shadow--2dp">
 			<%= link_to cantante_album_path(@cantante, album) do %>
-			<img src="http://s10.postimg.org/tmmfqxfhl/Cover.jpg">
+			<img src="<%= album.url_cover %>">
 			<span class="album-info">
 				<span><%= album.nombre %></span>
 			</span>

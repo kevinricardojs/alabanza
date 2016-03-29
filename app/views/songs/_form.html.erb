@@ -17,7 +17,7 @@
     <%= collection_select(:song, :album_id, @cantante.albums, :id, :nombre, prompt:"Selecciona un Album", html:{class:"browser-default"})%>
 </div>
 
-<div class="field mdl-textfield mdl-js-textfield mdl-cell mdl-cell--12-col">
+<div class="field mdl-textfield mdl-js-textfield mdl-textfield--floating-label mdl-cell mdl-cell--12-col">
     <%= f.text_field :nombre,class:"mdl-textfield__input" %>
     <%= f.label :nombre, "Titulo de la Canción", class:"mdl-textfield__label" %>
 </div>
